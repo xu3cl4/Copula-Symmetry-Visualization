@@ -56,7 +56,7 @@ test.sym <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
     e <- 10^(-2)
     t <- seq(e, 1 - e, len=p)
   }
-  y <- non.out(y)
+  # y <- non.out(y)
   
   # use U to construct simulated sample 
   ec <- empCopula(U)
@@ -117,13 +117,13 @@ test.rsym <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
     e <- 10^(-2)
     t <- seq(e, 1 - e, len=p)
   }
-  y <- non.out(y)
+  # y <- non.out(y)
   
   # use U to construct simulated sample 
   ec <- empCopula(U)
   U.s <- simulate.rsym(n.s, ec)
   y.s <- get.y.r(U.s, n.curves, t)
-  y.s <- non.out(y.s)
+  # y.s <- non.out(y.s)
   
   W <- get.W(y, y.s)
   
@@ -138,13 +138,13 @@ test.rsym <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
                    
                    U.b <- simulate.rsym(n, ec)
                    y.b <- get.y.r(U.b, n.curves, t)
-                   y.b <- non.out(y.b)
+                   # y.b <- non.out(y.b)
                    
                    # use U to construct simulated sample 
                    ec.b <- empCopula(U.b)
                    U.bs <- simulate.rsym(n.s, ec.b)
                    y.bs <- get.y.r(U.bs, n.curves, t)
-                   y.bs <- non.out(y.bs)
+                   # y.bs <- non.out(y.bs)
                    
                    W.b <- get.W(y.b, y.bs)
                    
@@ -178,13 +178,13 @@ test.jsym.1 <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
     e <- 10^(-2)
     t <- seq(e, 1 - e, len=p)
   }
-  y <- non.out(y)
+  # y <- non.out(y)
   
   # use U to construct simulated sample 
   ec <- empCopula(U)
   U.s <- simulate.jsym(n.s, ec)
   y.s <- get.y.j1(U.s, n.curves, t)
-  y.s <- non.out(y.s)
+  # y.s <- non.out(y.s)
   
   W <- get.W(y, y.s)
   
@@ -199,13 +199,13 @@ test.jsym.1 <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
                    
                    U.b <- simulate.jsym(n, ec)
                    y.b <- get.y.j1(U.b, n.curves, t)
-                   y.b <- non.out(y.b)
+                   # y.b <- non.out(y.b)
                    
                    # use U to construct simulated sample 
                    ec.b <- empCopula(U.b)
                    U.bs <- simulate.jsym(n.s, ec.b)
                    y.bs <- get.y.j1(U.bs, n.curves, t)
-                   y.bs <- non.out(y.bs)
+                   # y.bs <- non.out(y.bs)
                    
                    W.b <- get.W(y.b, y.bs)
                    
@@ -238,13 +238,13 @@ test.jsym.2 <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
     e <- 10^(-2)
     t <- seq(e, 1 - e, len=p)
   }
-  y <- non.out(y)
+  # y <- non.out(y)
   
   # use U to construct simulated sample 
   ec <- empCopula(U)
   U.s <- simulate.jsym(n.s, ec)
   y.s <- get.y.j2(U.s, n.curves, t)
-  y.s <- non.out(y.s)
+  # y.s <- non.out(y.s)
   
   W <- get.W(y, y.s)
   
@@ -259,13 +259,13 @@ test.jsym.2 <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
                    
                    U.b <- simulate.jsym(n, ec)
                    y.b <- get.y.j2(U.b, n.curves, t)
-                   y.b <- non.out(y.b)
+                   # y.b <- non.out(y.b)
                    
                    # use U to construct simulated sample 
                    ec.b <- empCopula(U.b)
                    U.bs <- simulate.jsym(n.s, ec.b)
                    y.bs <- get.y.j2(U.bs, n.curves, t)
-                   y.bs <- non.out(y.bs)
+                   # y.bs <- non.out(y.bs)
                    
                    W.b <- get.W(y.b, y.bs)
                    
