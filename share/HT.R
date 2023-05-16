@@ -37,7 +37,7 @@ non.out <- function(data){
 }
 
 # test for symmetry
-test.sym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
+test.sym <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
   
   # setup for time parameter 
   e <- 10^(-2)
@@ -45,7 +45,7 @@ test.sym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   n <- dim(U)[1]
   n.s <- n
   if (is.null(n.curves)){
-    n.curves <- 1.2*n
+    n.curves <- ceiling(1.2*n)
   }
   
   # hypothesis testing procedure
@@ -62,7 +62,7 @@ test.sym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   ec <- empCopula(U)
   U.s <- simulate.sym(n.s, ec)
   y.s <- get.y(U.s, n.curves, t)
-  y.s <- non.out(y.s)
+  # y.s <- non.out(y.s)
   
   W <- get.W(y, y.s)
   
@@ -77,13 +77,13 @@ test.sym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
                    
                    U.b <- simulate.sym(n, ec)
                    y.b <- get.y(U.b, n.curves, t)
-                   y.b <- non.out(y.b)
+                   # y.b <- non.out(y.b)
                    
                    # use U to construct simulated sample 
                    ec.b <- empCopula(U.b)
                    U.bs <- simulate.sym(n.s, ec.b)
                    y.bs <- get.y(U.bs, n.curves, t)
-                   y.bs <- non.out(y.bs)
+                   # y.bs <- non.out(y.bs)
                    
                    W.b <- get.W(y.b, y.bs)
                    
@@ -98,7 +98,7 @@ test.sym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
 }
 
 # test for radial symmetry
-test.rsym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
+test.rsym <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
   
   # setup for time parameter 
   n <- dim(U)[1]
@@ -159,13 +159,13 @@ test.rsym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
 }
 
 # test for joint symmetry
-test.jsym.1 <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
+test.jsym.1 <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
   
   # setup for time parameter 
   n <- dim(U)[1]
   n.s <- n
   if (is.null(n.curves)){
-    n.curves <- 1.2*n
+    n.curves <- ceiling(1.2*n)
   }
   
   # hypothesis testing procedure
@@ -219,13 +219,13 @@ test.jsym.1 <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   return (p.val)
 }
 
-test.jsym.2 <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
+test.jsym.2 <- function(U, y=NULL, p=100, N.b=250, n.curves=NULL){
   
   # setup for time parameter 
   n <- dim(U)[1]
   n.s <- n
   if (is.null(n.curves)){
-    n.curves <- 1.2*n
+    n.curves <- ceiling(1.2*n)
   }
   
   # hypothesis testing procedure
