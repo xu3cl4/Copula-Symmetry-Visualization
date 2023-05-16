@@ -44,7 +44,7 @@ test.sym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   t <- seq(e, 1 - e, len=p)
   n <- dim(U)[1]
   n.s <- n
-  if is.null(n.curves){
+  if (is.null(n.curves)){
     n.curves <- 1.2*n
   }
   
@@ -103,7 +103,7 @@ test.rsym <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   # setup for time parameter 
   n <- dim(U)[1]
   n.s <- n
-  if is.null(n.curves){
+  if (is.null(n.curves)){
     n.curves <- ceiling(1.2*n)
   }
   
@@ -164,7 +164,7 @@ test.jsym.1 <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   # setup for time parameter 
   n <- dim(U)[1]
   n.s <- n
-  if is.null(n.curves){
+  if (is.null(n.curves)){
     n.curves <- 1.2*n
   }
   
@@ -224,7 +224,7 @@ test.jsym.2 <- function(U, y=NULL, p=100, sig=0.05, N.b=250, n.curves=NULL){
   # setup for time parameter 
   n <- dim(U)[1]
   n.s <- n
-  if is.null(n.curves){
+  if (is.null(n.curves)){
     n.curves <- 1.2*n
   }
   
